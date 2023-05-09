@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOG</title>
+</head>
+<body>
+  <h1>Blog</h1>
+  <div>
+    <form method="GET" action="/">
+      <label for="search">Nhập tiêu đề</label>
+      <input name="search" >
+      <button type="submit">Tìm kiếm</button>
+    </form><br>
+    <% for (var i = 0;i < blogs.length;i++) { %>
+      <div style="border-style: solid;padding: 10px;">
+        <h2 style="text-align: center;"><%= blogs[i].title %></h2>
+        <h4><%= blogs[i].body %></h3>
+        <img src="<%= blogs[i].img %>" style="width: 100px;" /><br>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

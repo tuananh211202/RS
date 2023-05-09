@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div, h1{
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Update</h1>
+  <form method="POST" action="/api/blogs/<%= blog._id %>">
+    <div>
+      <div>
+        <label for="title">Title</label>
+        <input type="hidden" name="id" value="<%= blog._id %>">
+        <input type="text" name="title" value="<%= blog.title %>">
+      </div>
+      <div>
+        <label for="body">Body</label>
+        <input type="text" name="body" value="<%= blog.body %>">
+      </div>
+      <div>
+        <label for="image">Image</label>
+        <input type="text" name="image" value="<%= blog.img %>"><br><br>
+        <img src="<%= blog.img %>" style="width: 100px;" />
+      </div>
+      <div>
+        <button type="submit">Lưu</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
